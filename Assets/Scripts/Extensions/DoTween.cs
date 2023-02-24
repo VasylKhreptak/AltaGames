@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Extensions
 {
-    public static class DoTweenExtensions
+    public static class DoTween
     {
         public static Tween DOWait(this MonoBehaviour owner, float duration)
         {

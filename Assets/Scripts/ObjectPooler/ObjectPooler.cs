@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Extensions;
 using UnityEngine;
 using Zenject;
+using Transform = UnityEngine.Transform;
 
 namespace ObjectPooler
 {
@@ -132,11 +134,9 @@ namespace ObjectPooler
 
             Transform poolTransform = poolItem.transform.parent;
 
-            Transform[] poolItems = poolTransform.GetComponentsInChildren<Transform>();
-
-            foreach (Transform item in poolItems)
+            foreach (Transform child in poolTransform)
             {
-                item.gameObject.SetActive(false);
+                child.gameObject.SetActive(false);
             }
         }
 
