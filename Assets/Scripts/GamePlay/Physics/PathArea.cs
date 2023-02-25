@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Events.Gameplay;
 using Events.Gameplay.Enemy;
 using Events.Physics;
@@ -31,7 +32,7 @@ namespace GamePlay.Physics
 
         private void RemoveInactiveTargets()
         {
-            foreach (var affectedObject in _affectedObjects)
+            foreach (var affectedObject in new List<Transform>(_affectedObjects))
             {
                 if (affectedObject.gameObject.activeSelf == false)
                 {

@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _positionProvider: {fileID: 1216064479}
   _respawnEvent: {fileID: 255845984}
-  _enemyCountSlider: {x: 30, y: 38}
+  _enemyCountSlider: {x: 33, y: 40}
   _enemies: 0000000001000000
 --- !u!114 &255845983
 MonoBehaviour:
@@ -9409,6 +9409,7 @@ GameObject:
   - component: {fileID: 1461901476}
   - component: {fileID: 1461901475}
   - component: {fileID: 1461901474}
+  - component: {fileID: 1461901477}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
@@ -9460,6 +9461,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461901477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461901473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0dd725c1ef40294d905d393e7ef6f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1474434248
 PrefabInstance:
   m_ObjectHideFlags: 0

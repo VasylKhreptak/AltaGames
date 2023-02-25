@@ -15,12 +15,12 @@ namespace Events.Gameplay.Enemy
             _enemy ??= GetComponent<GamePlay.Enemy.Enemy>();
         }
 
-        private void OnEnable()
+        private void Awake()
         {
             _enemy.onKilled += Invoke;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _enemy.onKilled -= Invoke;
         }
