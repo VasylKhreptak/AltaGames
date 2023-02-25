@@ -5,7 +5,7 @@ using ObjectPooler;
 using UnityEngine;
 using Zenject;
 
-namespace Events.Gameplay
+namespace Events.Gameplay.Enemy
 {
     public class AnyEnemyDiedEvent : MonoEvent
     {

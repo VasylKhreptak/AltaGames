@@ -1,26 +1,28 @@
+using GamePlay.Enemy;
 using GamePlay.Entity;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Action = CBA.Actions.Core.Action;
 
 namespace Actions.Entity
 {
-    public class KillObject : Action
+    public class KillEnemy : Action
     {
         [Header("References")]
-        [SerializeField] private KillableObject _killableObject;
+        [SerializeField] private Enemy _enemy;
 
         #region MonoBehaviour
 
         private void OnValidate()
         {
-            _killableObject ??= GetComponent<KillableObject>();
+            _enemy ??= GetComponent<Enemy>();
         }
 
         #endregion
 
         public override void Do()
         {
-            _killableObject.Kill();
+            _enemy.Kill();
         }
     }
 }
