@@ -7,7 +7,7 @@ namespace Physics.Transform.PositionLinker
     public class TransformPositionLinker : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private UnityEngine.Transform _transform;
+        [SerializeField] protected UnityEngine.Transform _transform;
 
         [Header("Link Preferences")]
         public PositionLinkerData data;
@@ -27,6 +27,11 @@ namespace Physics.Transform.PositionLinker
         {
             if (data.linkTo == null || data.linkAxis == Vector3Int.zero) return;
 
+            UpdatePosition();
+        }
+
+        protected virtual void UpdatePosition()
+        {
             Vector3 position = CBA.Extensions.Vector3.ReplaceWithByAxes(_transform.position, data.linkTo.position + data.offset, data.linkAxis);
 
             _transform.position = position;
