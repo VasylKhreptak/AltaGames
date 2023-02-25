@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Extensions;
 using UnityEngine;
 using Zenject;
 using Transform = UnityEngine.Transform;
@@ -129,6 +128,12 @@ namespace ObjectPooler
 
         public void DisablePool(Pools pool)
         {
+            if (_poolDictionary.ContainsKey(pool) == false)
+            {
+                Debug.LogWarning("Pool with name " + pool + "doesn't exist");
+                return;
+            }
+
             GameObject poolItem = _poolDictionary[pool].Dequeue();
             _poolDictionary[pool].Enqueue(poolItem);
 
@@ -138,6 +143,43 @@ namespace ObjectPooler
             {
                 child.gameObject.SetActive(false);
             }
+        }
+
+        public Transform GetPoolParent(Pools pool)
+        {
+            if (_poolDictionary.ContainsKey(pool) == false)
+            {
+                Debug.LogWarning("Pool with name " + pool + "doesn't exist");
+                return null;
+            }
+
+            GameObject poolItem = _poolDictionary[pool].Dequeue();
+            Transform poolParent = poolItem.transform.parent;
+            _poolDictionary[pool].Enqueue(poolItem);
+            return poolParent;
+        }
+
+        public int GetPoolSize(Pools pool)
+        {
+            if (_poolDictionary.ContainsKey(pool) == false)
+            {
+                Debug.LogWarning("Pool with name " + pool + "doesn't exist");
+                return -1;
+            }
+
+            return GetPoolParent(pool).childCount;
+        }
+
+        public int GetPoolsSize(Pools[] pools)
+        {
+            int size = 0;
+
+            foreach (var pool in pools)
+            {
+                size += GetPoolSize(pool);
+            }
+
+            return size;
         }
 
         [Serializable]

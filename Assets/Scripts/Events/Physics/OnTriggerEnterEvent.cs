@@ -4,10 +4,12 @@ using UnityEngine;
 
 namespace Events.Physics
 {
-    public class TriggerEnterEvent : MonoEvent
+    public class OnTriggerEnterEvent : MonoBehaviour
     {
         [Header("Preferences")]
         [SerializeField] private LayerMask _layerMask;
+
+        public event Action<Collider> onEnter;
 
         #region MonoBehaviour
 
@@ -15,7 +17,7 @@ namespace Events.Physics
         {
             if (Extensions.LayerMask.ContainsLayer(_layerMask, other.gameObject.layer))
             {
-                onMonoCall?.Invoke();
+                onEnter?.Invoke(other);
             }
         }
 
