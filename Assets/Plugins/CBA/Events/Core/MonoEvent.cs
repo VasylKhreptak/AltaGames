@@ -4,6 +4,6 @@ namespace CBA.Events.Core
     {
         public System.Action onMonoCall;
 
-        protected virtual void Invoke() => onMonoCall?.Invoke();
+        public void Invoke() => onMonoCall?.Invoke();
     }
 }
