@@ -1,5 +1,4 @@
 using System;
-using CBA.Events.Core;
 using UnityEngine;
 
 namespace Events.Physics

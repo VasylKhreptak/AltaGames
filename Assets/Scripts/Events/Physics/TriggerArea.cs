@@ -9,9 +9,9 @@ namespace Events.Physics
         [Header("References")]
         [SerializeField] private OnTriggerEnterEvent _triggerEnterEvent;
         [SerializeField] private OnTriggerExitEvent _triggerExitEvent;
-        //
-        public List<Transform> _affectedObjects = new List<Transform>();
-        //
+
+        protected List<Transform> _affectedObjects = new List<Transform>();
+        
         public Action onFilled;
         public Action onEmptied;
 

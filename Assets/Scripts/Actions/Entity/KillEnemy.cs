@@ -1,7 +1,5 @@
 using GamePlay.Enemy;
-using GamePlay.Entity;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Action = CBA.Actions.Core.Action;
 
 namespace Actions.Entity

@@ -62,7 +62,6 @@ namespace AudioPooler
 
         #endregion
 
-
         private void FillPool()
         {
             for (int i = 0; i < _soundsCount; i++)

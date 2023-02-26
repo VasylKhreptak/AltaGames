@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Graphics.Framerate
+namespace Graphics
 {
     public class GameFramerate : MonoBehaviour
     {

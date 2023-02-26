@@ -3,7 +3,6 @@ using Extensions;
 using NaughtyAttributes;
 using ObjectPooler;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 using Random = UnityEngine.Random;
 
